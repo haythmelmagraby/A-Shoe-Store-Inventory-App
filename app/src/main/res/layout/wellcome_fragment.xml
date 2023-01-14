@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    Linear Layout help to organize my view in single vertical direction with light behavior and
+    easy code and it's not complex UI
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/wellcome_title_text_id"
+            style="@style/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin_dimention"
+            android:layout_marginEnd="@dimen/small_margin_dimention"
+            android:layout_marginBottom="30dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:text="@string/wellcome_title_text"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/wellcome_message_text_id"
+            style="@style/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin_dimention"
+            android:layout_marginEnd="@dimen/small_margin_dimention"
+            android:ems="10"
+            android:text="@string/wellcome_message_text" />
+
+
+        <Button
+            android:id="@+id/wellcome_button_id"
+            style="@style/buttonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin_dimention"
+            android:layout_marginTop="@dimen/large_margin_dimention"
+            android:layout_marginEnd="@dimen/small_margin_dimention"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/continue_button"
+            android:textColorHint="@color/cardview_dark_background" />
+
+    </LinearLayout>
+</layout>

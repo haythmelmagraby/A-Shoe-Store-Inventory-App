@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sharedviewmodel"
+            type="com.udacity.shoestore.viewmodels.SharedViewModel" />
+    </data>
+
+    <!--
+    here i can use both (Linear - Constrain) but i prefer constrain because ui is a little complex
+    and constrain is less code than Linear
+    -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <!--
+        here i should use linear because it's single vertical direction so i need light behavior and
+        easy code and no complexity
+        -->
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin_dimention"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05">
+
+            <EditText
+                android:id="@+id/shoe_name_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="nam"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="@={sharedviewmodel.shoeData.name}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/shoe_company_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/shoe_company_text_hint_id"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="@={sharedviewmodel.shoeData.company}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+        <!--
+        here i should use linear because it's single vertical direction so i need light behavior and
+        easy code and no complexity
+        -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.051">
+
+            <EditText
+                android:id="@+id/shoe_size_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/shoe_size_text_hint_id"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:text="@={sharedviewmodel.shoeData.size}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+
+            <EditText
+                android:id="@+id/shoe_descreption_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/shoe_description_text_hint_id"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="@={sharedviewmodel.shoeData.description}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+        <!--
+        here i should use linear because it's for organizing and it's single vertical direction and
+         i need light behavior and easy code with no complexity
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <Button
+                android:id="@+id/shoe_detail_save_button"
+                style="@style/buttonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin_dimention"
+                android:layout_marginEnd="@dimen/small_margin_dimention"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="@{()-> sharedviewmodel.addShoe()}"
+                android:text="@string/shoe_detail_save_botton" />
+
+            <Button
+                android:id="@+id/shoe_detail_Cancel_button"
+                style="@style/buttonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin_dimention"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/small_margin_dimention"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/shoe_details_button_cancel" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

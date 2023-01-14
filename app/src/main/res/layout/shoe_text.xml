@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="size"
+            type="String" />
+
+        <variable
+            name="company"
+            type="String" />
+
+        <variable
+            name="description"
+            type="String" />
+    </data>
+    <!--
+    here i should use linear because it's single vertical direction of views and i want sort them
+    easy and organized
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/nameID"
+            style="@style/textCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{name}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sizeID"
+            style="@style/textCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{size}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/companyID"
+            style="@style/textCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{company}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/descriptionID"
+            style="@style/textCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{description}"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>
